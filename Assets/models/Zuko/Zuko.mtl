@@ -1,0 +1,16 @@
+newmtl Zuko:initialShadingGroup
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd RVAE78_efdd8b33_14.png
+map_Ka RVAE78_efdd8b33_14.png
+Ni 1.00
+newmtl Zuko:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd RVAE78_e1c2bc67_14.png
+map_Ka RVAE78_e1c2bc67_14.png
+Ni 1.00
