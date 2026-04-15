@@ -16,11 +16,20 @@ public class LightningController : MonoBehaviour
     [SerializeField] private Light lightningSource2;
     private Coroutine lightning1 = null;
     private Coroutine lightning2 = null;
+    public bool useSkybox = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (useSkybox)
+        {
         skyboxMat = RenderSettings.skybox;
-        lightning1 = StartCoroutine(PlayFlash(lightningSource1, 1));
+
+        }
+        else
+        {
+            skyboxMat = GetComponent<Renderer>().material;
+        }
+            lightning1 = StartCoroutine(PlayFlash(lightningSource1, 1));
     }
 
     // Update is called once per frame
@@ -30,16 +39,6 @@ public class LightningController : MonoBehaviour
         intensity1 = countUp*lightning1Frequency;
         intensity2 = countUp*lightning2Frequency;
 
-        /*Color lightning1Intensity = lightningFlashGradient.Evaluate(math.frac(intensity1));
-        Color lightning2Intensity = lightningFlashGradient.Evaluate(math.frac(intensity2));
-        float lightningFlash1 = lightning1Intensity.grayscale;
-        float lightningFlash2 = lightning2Intensity.grayscale;
-        lightningSource1.intensity = lightningFlash1;
-        lightningSource2.intensity = lightningFlash2;*/
-
-        /*skyboxMat.SetColor("_Flash1Colour", lightning1Intensity);
-        skyboxMat.SetColor("_Flash2Colour", lightning2Intensity);*/
-       // Debug.Log(intensity1);
         if (math.frac(intensity1) >= 0.9f && lightning1 == null) lightning1 = StartCoroutine(PlayFlash(lightningSource1, 1)); 
         if (math.frac(intensity2) >= 0.9f && lightning2 == null) lightning2 = StartCoroutine(PlayFlash(lightningSource2, 2)); 
     }

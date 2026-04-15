@@ -103,8 +103,8 @@ Material:
     - _EnvironmentReflections: 1
     - _FlashIntensity1: 0
     - _FlashIntensity2: 0
-    - _FlashTime1: 3.9858494
-    - _FlashTime2: 7.9022965
+    - _FlashTime1: 3.9836042
+    - _FlashTime2: 7.9000354
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
